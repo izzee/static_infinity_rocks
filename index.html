@@ -4,24 +4,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./style.css">
   <title>Infinity Rocks</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#3efb00">
 </head>
 <body>
 
-  <main>
-    <div class="banner">
-      <img class="infinity" src="./assets/infinity.svg" alt="">
-      <video src="./assets/infinity-rock-video.mp4" poster="./assets/infinity-rock-poster.jpg" autoplay="true" muted="true" loop="true"></video>
-      <img class="rocks" src="./assets/rocks.svg" alt="">
-    </div>
+  <main class="grid">
+    <section class="hero rounded">
+      <img class="logo-text" src="./assets/infinity.svg" alt="infinity">
+      <img class="logo-text" src="./assets/rocks.svg" alt="rocks">
+      <img class="video-bg" src="./assets/infinity-rock-video.gif" alt="spinning infinity rocks logo">
+    </section>
+      
+    <section class="work grid">
+      <div class="title rounded blur">
+        <img class="smiley" src="./assets/infinity-smiley.svg" alt="smiley logo">
+        <img class="calendar-text" src="./assets/calendar-2022.svg" alt="calendar 2022">
+        <img class="smiley" src="./assets/infinity-smiley.svg" alt="smiley logo">
 
-    <div class="bottom-nav">
-      <a>2022 Calendar</a>
-      <a>Email List</a>
-      <a>Other Link</a>
-      <a>Lorem Ipsum</a>
+      </div>
+      <div class="carousel rounded">
+        <img src="./assets/calendar-placeholder.jpg" alt="calendar image">
+      </div>
+    </section>
 
+    <section class="info rounded">
+      <button>Coming Soon</button>
+    </section>
+
+    <section class="gallery grid">
+      <div class="pannel rounded red">
+        <img src="./assets/cat-dance-red.gif" alt="animated dancing cats">
+
+      </div>
+      <div class="pannel rounded yellow">
+        <img src="./assets/cat-dance-yellow.gif" alt="animated dancing cats">
+      </div>
+    </section>
+      
     </div>
   </main>
   
