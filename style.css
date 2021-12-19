@@ -9,7 +9,6 @@
   border-radius: 24px;
   /* Mockup */
   text-align: center;
-
   background-color: #ffffff;
   box-shadow: 0 0 4px 4px #ffffff;
 }
@@ -20,22 +19,49 @@
 }
 
 /* Sections .............................................*/
-
 body {
   background-color: #000000;
 }
 main {
   padding: 24px;
   margin: auto;
-  height: 1200px;
+  height: 752px;
+  max-width: 1280px;
 }
 
 section {
   border-radius: 24px;
 }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.hero .logo-text {
+ width: 100%;
+}
+
 .work {
-  grid-template-rows: 48px 1fr;
+  grid-template-rows: 32px 1fr;
+}
+
+.work .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.work .calendar-text {
+  width: 192px;
+}
+
+.work .smiley {
+  width: 24px;
+  padding: 8px;
 }
 
 .gallery {
@@ -48,21 +74,37 @@ section {
 }
 
 @media (min-width: 360px){
+  main {
+    height: 1000px;
+  }
 
 }
 @media (min-width: 768px){
   main {
-    height: calc(100vh  - 48px);
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    height: 1440px;
+  }
+
+  .hero {
+    padding: 24px;
   }
 
   .work {
-  grid-template-rows: 64px 1fr;
-
+    grid-template-rows: 64px 1fr;
+  }
+  .work .calendar-text {
+    width: 400px;
+  }
+  .work .smiley {
+    width: 56px;
+    padding: 8px;
   }
 }
-@media (min-width: 1024px){
+@media (min-width: 1026px){
+  main {
+    height: calc(100vh  - 48px);
+    grid-template-rows: 1fr 264px;
+    grid-template-columns: 1fr 1fr;
+  }
   .grid {
     grid-gap: 40px;
   }
@@ -71,17 +113,4 @@ section {
     padding: 40px;
     height: calc(100vh  - 80px);
   }
-}
-
-@media (min-width: 1280px){
-
-  
-
-}
-
-@media (min-width: 1440px){  
-  main {
-    max-width: 1440px;
-  }
-
 }
