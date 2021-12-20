@@ -7,10 +7,6 @@
 /* Classes ......................................................................................*/
 .rounded {
   border-radius: 40px;
-  /* Mockup */
-  text-align: center;
-  background-color: #ffffff;
-  box-shadow: 0 0 4px 4px;
 }
 
 .grid {
@@ -164,10 +160,6 @@ main {
       filter: blur(1.5vw);
     }
   }
-/* sections (tablet+) ...........................................................................*/
-  main {
-    grid-template-rows: calc(100vh - 240px) calc(100vh - 240px) calc(50vw - 48px) calc(50vw - 48px);
-  }
 /* hero (tablet+) ...............................................................................*/
   .hero {
     padding: 24px;
@@ -196,7 +188,7 @@ main {
     font-size: 24px;
   }
 }
-@media (min-width: 1200px){
+@media (min-width: 1000px){
 /* sections (desktop+) ..........................................................................*/
   main {
     padding: 40px;
