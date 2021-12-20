@@ -101,6 +101,7 @@ main {
 .work .smiley {
   height: 100%;
   padding: 8px;
+  box-sizing: border-box;
 }
 .work .carousel {
   position: relative;
