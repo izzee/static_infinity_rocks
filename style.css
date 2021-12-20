@@ -1,10 +1,10 @@
-/* Resets ...............................................*/
+/* Resets .......................................................................................*/
 * {
   margin: 0;
   padding: 0;
 }
 
-/* Classes ..............................................*/
+/* Classes ......................................................................................*/
 .rounded {
   border-radius: 40px;
   /* Mockup */
@@ -22,7 +22,7 @@
   filter: blur(1px);
 }
 
-/* Animations .......................................... */
+/* Animations ...................................................................................*/
 @keyframes pulse {
   from {
     transform: scale(1);
@@ -35,7 +35,6 @@
     opacity: .75;
   }
 }
-
 @keyframes blur {
   from {
     filter: blur(1px);
@@ -44,8 +43,7 @@
     filter: blur(2vw);
   }
 }
-
-/* Sections .............................................*/
+/* sections (base) ..............................................................................*/
 body {
   background-color: #000000;
 }
@@ -54,9 +52,8 @@ main {
   margin: auto;
   max-width: 1280px;
   grid-template-rows: calc(100vw - 48px) calc(100vw - 48px) calc(50vw - 48px) calc(50vw - 48px);
-
 }
-
+/* hero (base)  .................................................................................*/
 .hero {
   display: flex;
   flex-direction: column;
@@ -84,7 +81,7 @@ main {
 .hero .logo-text:first-child {
   animation: blur 6s infinite alternate;
 }
-
+/* work (base) ..................................................................................*/
 .work {
   grid-template-rows: 32px 1fr;
 }
@@ -108,13 +105,12 @@ main {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 4px 4px #B9D2F9, 0px 0px 16px 4px #B9D2F9 inset;
-
 }
 .work .carousel img {
   width: auto;
   max-height: 80vw;
 }
-
+/* gallery (base) ...............................................................................*/
 .gallery {
   grid-template-columns: 1fr 1fr;
 }
@@ -131,7 +127,7 @@ main {
   width: 100%;
   height: 100%;
 }
-
+/* info (base) ..................................................................................*/
 .info {
   border-top-left-radius: calc(50vw - 24px);
   border-bottom-right-radius: calc(50vw - 24px);
@@ -159,6 +155,7 @@ main {
 }
 
 @media (min-width: 768px){
+/* animations (tablet+) .........................................................................*/
   @keyframes blur {
     from {
       filter: blur(1px);
@@ -167,15 +164,15 @@ main {
       filter: blur(1.5vw);
     }
   }
-
+/* sections (tablet+) ...........................................................................*/
   main {
     grid-template-rows: calc(100vh - 240px) calc(100vh - 240px) calc(50vw - 48px) calc(50vw - 48px);
   }
-
+/* hero (tablet+) ...............................................................................*/
   .hero {
     padding: 24px;
   }
-
+/* work (tablet+) ...............................................................................*/
   .work {
     grid-template-rows: 64px 1fr;
   }
@@ -190,7 +187,7 @@ main {
     width: auto;
     max-height: 300px;
   }
-
+/* info (tablet+) ...............................................................................*/
   .info button {
     margin: 16px;
     margin-left: auto;
@@ -200,12 +197,15 @@ main {
   }
 }
 @media (min-width: 1200px){
+/* sections (desktop+) ..........................................................................*/
   main {
     padding: 40px;
     height: calc(100vh  - 80px);
     grid-template-rows: 1fr 290px;
     grid-template-columns: 1fr 1fr;
   }
+/* classes (desktop+) ...........................................................................*/
+
   .grid {
     grid-gap: 40px;
   }
