@@ -1,4 +1,4 @@
-/* Resets .......................................................................................*/
+/* Resets ..............................................................................................*/
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
 button {
   -webkit-appearance: none;
 }
-/* Classes ......................................................................................*/
+/* Classes .............................................................................................*/
 .rounded {
   border-radius: 40px;
 }
@@ -14,7 +14,7 @@ button {
   display: grid;
   grid-gap: 24px;
 }
-/* Animations ...................................................................................*/
+/* Animations ..........................................................................................*/
 @keyframes pulse {
   from {
     transform: scale(1);
@@ -54,17 +54,16 @@ button {
     box-shadow: 0 0 4px 4px #00FCB0;
   }
 }
-/* base styling .................................................................................*/
+/* base styling ........................................................................................*/
 body {
   background-color: #000000;
 }
 main {
   padding: 24px;
-  margin: auto;
-  max-width: 1440px;
+  min-height: calc(var(--vh, 1vh) * 100 - 48px);
   grid-template-rows: calc(100vw - 48px) calc(100vw - 48px) calc(50vw - 48px) calc(50vw - 48px);
 }
-/* hero (base)  .................................................................................*/
+/* hero (base)  ........................................................................................*/
 .hero {
   display: flex;
   flex-direction: column;
@@ -74,6 +73,7 @@ main {
   position: relative;
   background-color: #3efb00;
   box-shadow: 0 0 4px 4px #00FCB0, 0 0 4px 4px #00FCB0 inset;
+  box-sizing: border-box;
 }
 .hero .video-bg {
   position: absolute;
@@ -92,7 +92,7 @@ main {
 .hero .logo-text:first-child {
   animation: blur 6s infinite alternate;
 }
-/* work (base) ..................................................................................*/
+/* work (base) .........................................................................................*/
 .work {
   grid-template-rows: 48px 1fr;
 }
@@ -135,7 +135,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* gallery (base) ...............................................................................*/
+/* gallery (base) ......................................................................................*/
 .gallery {
   grid-template-columns: 1fr 1fr;
 }
@@ -173,7 +173,7 @@ main {
 .gallery .pannel:hover .x-ray-cat{
   opacity: 1;
 }
-/* info (base) ..................................................................................*/
+/* info (base) .........................................................................................*/
 .info {
   border-top-left-radius: calc(50vw - 24px);
   border-bottom-right-radius: calc(50vw - 24px);
@@ -199,19 +199,19 @@ main {
   transform: scale(1.1);
   box-shadow: 0 0px 64px #0000ff, 0 -4px 16px #B9D2F9 inset;
 }
-/* paypal modal (base) .........................................................................*/
+/* paypal modal (base) .................................................................................*/
 .paypal-modal {
   opacity: 0;
-  transform: scale(0, .5) translate(-50%, -50%);
+  transform: scale(.5, .5) translate(-50%, -50%);
   pointer-events: none;
   position: fixed;
   left: 50%;
   top: 50%;
   background-color: #fff;
-  width: 50vw;
-  min-width: 300px;
-  min-height: 400px;
+  width: calc(100vw - 48px);
   height: 50vh;
+  max-width: 700px;
+  max-height: 700px;
   overflow: scroll;
   box-shadow: 0 24px 128px #ffff00, 0 -8px 96px #0000ff, 0 -4px 16px #d6d6d6 inset;
   transform-origin: left top;
@@ -270,10 +270,15 @@ main {
   transform: scale(1) translate(-50%, -50%);
   display: block;
 }
+@media (min-width: 720px) {
+  main {
+    grid-template-rows: 700px 700px calc(50vw - 48px) calc(50vw - 48px);
+  }
 
-/* desktop+ styling ............................................................................*/
-@media (min-width: 1000px){
-/* animations (desktop+) .......................................................................*/
+}
+/* desktop+ styling ....................................................................................*/
+@media (min-width: 1024px){
+/* animations (desktop+) ...............................................................................*/
   @keyframes blur {
     from {
       filter: blur(1px);
@@ -290,30 +295,51 @@ main {
       transform: translateX(calc(-100% - 48px));
     }
   }
-/* sections (desktop+) ..........................................................................*/
+/* sections (desktop+) .................................................................................*/
   main {
     padding: 40px;
-    height: calc(100vh  - 80px);
-    grid-template-rows: 1fr 290px;
-    grid-template-columns: 1fr 1fr;
+    min-height: calc(var(--vh, 1vh) * 100 - 80px);
   }
-/* classes (desktop+) ...........................................................................*/
+/* classes (desktop+) ..................................................................................*/
   .grid {
     grid-gap: 40px;
   }
-/* work (desktop+) ..............................................................................*/
+/* work (desktop+) .....................................................................................*/
   .work {
     grid-template-rows: 64px 1fr;
   }
   .work .title-marquee .title-image {
     margin: 0 24px;
   }
-/* info (desktop+) ............................................................................*/
+/* info (desktop+) .....................................................................................*/
   .info button {
     margin: 16px;
     margin-left: auto;
     padding: 8px 24px;
     border-radius: 24px;
     font-size: 24px;
+  }
+}
+/* landscape styling ...................................................................................*/
+@media (orientation: landscape) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+  }
+}
+/*  desktop++ styling ..................................................................................*/
+@media (min-width: 1280px){
+  main {
+    margin: auto;
+    max-width: 1440px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+  }
+  .gallery,
+  .work,
+  .info,
+  .hero {
+    grid-row: auto;
+    grid-column: auto;
   }
 }
