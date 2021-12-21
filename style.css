@@ -244,11 +244,17 @@ main {
   box-shadow: 0 0 8px red inset;
   transition: color .25s, background-color .25s, box-shadow .25s;
 }
+.paypal-modal #modal-close svg {
+  fill: red;
+  width: 50%;
+}
 .paypal-modal #modal-close:hover {
-  color: pink;
+  fill: pink;
   background-color: red;
-  box-shadow: 0 0 8px 8px pink inset,  0 0 16px red;
-
+  box-shadow: 0 0 8px 4px pink inset,  0 0 16px 2px red;
+}
+.paypal-modal #modal-close:hover svg {
+  fill: pink;
 }
 .modal-open {
   overflow: hidden;
@@ -270,11 +276,19 @@ main {
   transform: scale(1) translate(-50%, -50%);
   display: block;
 }
+/* tablet+ styling .....................................................................................*/
 @media (min-width: 720px) {
   main {
     grid-template-rows: 700px 700px calc(50vw - 48px) calc(50vw - 48px);
   }
-
+  /* info (tablet+) ....................................................................................*/
+  .info button {
+    margin: 16px;
+    margin-left: auto;
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-size: 24px;
+  }
 }
 /* desktop+ styling ....................................................................................*/
 @media (min-width: 1024px){
@@ -311,14 +325,6 @@ main {
   .work .title-marquee .title-image {
     margin: 0 24px;
   }
-/* info (desktop+) .....................................................................................*/
-  .info button {
-    margin: 16px;
-    margin-left: auto;
-    padding: 8px 24px;
-    border-radius: 24px;
-    font-size: 24px;
-  }
 }
 /* landscape styling ...................................................................................*/
 @media (orientation: landscape) {
@@ -341,5 +347,10 @@ main {
   .hero {
     grid-row: auto;
     grid-column: auto;
+  }
+}
+@media (min-width: 2000px) and (min-height: 1500px) {
+  main {
+    max-width: 2000px;
   }
 }
