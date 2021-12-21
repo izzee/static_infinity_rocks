@@ -15,7 +15,6 @@
   <meta name="theme-color" content="#000000">
 </head>
 <body>
-
   <main class="grid">
     <section class="hero rounded">
       <img class="logo-text" src="./assets/infinity.svg" alt="infinity">
@@ -24,15 +23,14 @@
     </section>
       
     <section class="work grid">
-      <div class="title rounded ">
-        <img class="smiley blur" src="./assets/infinity-smiley.svg" alt="smiley logo">
-        <div class="title-marquee blur">
+      <div class="title rounded">
+        <img class="smiley" src="./assets/infinity-smiley.svg" alt="smiley logo">
+        <div class="title-marquee">
           <img class="title-image" src="./assets/calendar-2022.svg" alt="calendar 2022">
           <img class="title-image" src="./assets/calendar-2022.svg" alt="calendar 2022">
           <img class="title-image" src="./assets/calendar-2022.svg" alt="calendar 2022">
         </div>
-        <img class="smiley blur" src="./assets/infinity-smiley.svg" alt="smiley logo">
-
+        <img class="smiley" src="./assets/infinity-smiley.svg" alt="smiley logo">
       </div>
       <div class="carousel rounded">
         <img src="./assets/calendar-placeholder.jpg" alt="calendar image">
@@ -40,7 +38,7 @@
     </section>
 
     <section class="info rounded">
-      <button>Coming Soon</button>
+      <button id="modal-open">Order Now</button>
     </section>
 
     <section class="gallery grid">
@@ -54,7 +52,59 @@
         <img class="x-ray-cat" src="./assets/cat-dance-black.gif" alt="animated dancing cats">
       </div>
     </section>
-  </main>
   
+  </main>
+  <div id="modal" class="paypal-modal rounded">
+    <div class="top-bar">
+      <button id="modal-close">✕</button>
+    </div>
+    <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+  </div>
+  <script src="./script.js"></script>
 </body>
 </html>
