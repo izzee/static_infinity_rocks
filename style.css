@@ -221,7 +221,7 @@ body:not(.loaded) .paypal-modal {
   background-color: #fff;
   width: calc(100vw - 48px);
   height: 50vh;
-  min-height: 320px;
+  min-height: 400px;
   max-width: 700px;
   max-height: 480px;
   overflow: scroll;
@@ -234,11 +234,11 @@ body:not(.loaded) .paypal-modal {
 .paypal-modal .top-bar {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
-  box-shadow: 0 2px 8px #ffffff inset, 0 -2px 16px #000000 inset;
+  box-shadow: 0 2px 8px #ffffff inset, 0 -2px 16px #9c9c9c inset;
   background-color: #d6d6d6;
   display: flex;
   align-items: center;
-  height: 56px;
+  height: 64px;
   top: 0;
   z-index: 200;
   position: sticky;
