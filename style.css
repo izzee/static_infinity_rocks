@@ -171,9 +171,9 @@ main {
   opacity: 0;
 }
 .gallery .pannel:hover {
-  cursor:not-allowed;
+  cursor: none;
   background-color: #000000;
-  box-shadow: 0 0 4px 4px #3efb00, 0 0 4px 4px #3efb00 inset;
+  box-shadow: 0 0 2px 2px #3efb00, 0 0 2px 2px #3efb00 inset;
 }
 .gallery .pannel:hover .x-ray-cat {
   opacity: 1;
@@ -357,12 +357,15 @@ body:not(.loaded) .paypal-modal {
     border-bottom-right-radius: calc(50vw - 24px);
   }
 /* gallery (desktop+) ..................................................................................*/
-.gallery .pannel.left {
-  box-shadow: 0 0 4px 4px #E93D28, 0 0 4px 4px #E93D28 inset;
-}
-.gallery .pannel.right {
-  box-shadow: 0 0 4px 4px #FFD674, 0 0 4px 4px #FFD674 inset;
-}
+  .gallery .pannel.left {
+    box-shadow: 0 0 4px 4px #E93D28, 0 0 4px 4px #E93D28 inset;
+  }
+  .gallery .pannel.right {
+    box-shadow: 0 0 4px 4px #FFD674, 0 0 4px 4px #FFD674 inset;
+  }
+  .gallery .pannel:hover {
+    box-shadow: 0 0 4px 4px #3efb00, 0 0 4px 4px #3efb00 inset;
+  }
 }
 /* landscape styling ...................................................................................*/
 @media (orientation: landscape) {
