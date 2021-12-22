@@ -150,11 +150,11 @@ main {
 }
 .gallery .pannel.left {
   background-color: #FFD674;
-  box-shadow: 0 0 4px 4px #E93D28, 0 0 4px 4px #E93D28 inset;
+  box-shadow: 0 0 2px 2px #E93D28, 0 0 2px 2px #E93D28 inset;
 }
 .gallery .pannel.right {
   background-color: #E93D28;
-  box-shadow: 0 0 4px 4px #FFD674, 0 0 4px 4px #FFD674 inset;
+  box-shadow: 0 0 2px 2px #FFD674, 0 0 2px 2px #FFD674 inset;
 }
 .gallery img {
   width: 100%;
@@ -221,12 +221,15 @@ body:not(.loaded) .paypal-modal {
   background-color: #fff;
   width: calc(100vw - 48px);
   height: 50vh;
+  min-height: 320px;
   max-width: 700px;
-  max-height: 700px;
+  max-height: 480px;
   overflow: scroll;
   box-shadow: 0 24px 128px 28px #ffff00, 0 -4px 64px 28px #0000ff, 0 -4px 16px #d6d6d6 inset;
   transform-origin: left top;
   transition: opacity .25s, transform .25s;
+  display: flex;
+  flex-direction: column;
 }
 .paypal-modal .top-bar {
   border-top-left-radius: inherit;
@@ -238,7 +241,8 @@ body:not(.loaded) .paypal-modal {
   height: 56px;
   top: 0;
   z-index: 200;
-  position: relative;
+  position: sticky;
+  top: 0;
 }
 .paypal-modal .top-bar p {
   flex: 1;
@@ -348,11 +352,17 @@ body:not(.loaded) .paypal-modal {
     margin: 0 24px;
   }
 /* info (desktop+) .....................................................................................*/
-
   .info {
     border-top-left-radius: calc(50vw - 24px);
     border-bottom-right-radius: calc(50vw - 24px);
   }
+/* gallery (desktop+) ..................................................................................*/
+.gallery .pannel.left {
+  box-shadow: 0 0 4px 4px #E93D28, 0 0 4px 4px #E93D28 inset;
+}
+.gallery .pannel.right {
+  box-shadow: 0 0 4px 4px #FFD674, 0 0 4px 4px #FFD674 inset;
+}
 }
 /* landscape styling ...................................................................................*/
 @media (orientation: landscape) {
