@@ -45,25 +45,9 @@ function vhVariable() {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
-function ballLightning() {
-  const xRayCats = document.querySelectorAll('.x-ray-cat');
-  xRayCats.forEach(cat => {
-    cat.addEventListener('mouseover', (event)=> {
-      const {x, y, target} = event;
-      const ballLightning = target.previousElementSibling;
-      // ballLightning.style.left = `${x}px`;
-      // ballLightning.style.top = `${y}px`;
-      // console.log(ballLightning.style)
-
-      console.log(ballLightning);
-    })
-  })
-}
-
 document.addEventListener('DOMContentLoaded', ()=> {
   initPayPalButton();
   paypalModal();
   vhVariable();
-  ballLightning();
   window.addEventListener('resize', vhVariable)
 })
