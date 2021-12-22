@@ -12,7 +12,7 @@ button {
 }
 /* Classes .............................................................................................*/
 .rounded {
-  border-radius: 40px;
+  border-radius: 24px;
 }
 .grid {
   display: grid;
@@ -50,26 +50,13 @@ button {
 @keyframes gradient {
   from {
     background-position:0% 0%;
-    box-shadow: 0 0 4px 4px #B9D2F9;
-
+    box-shadow: 0 0 4px 4px #00FCB0;
   }
   to {
     background-position:100% 100%;
-    box-shadow: 0 0 4px 4px #00FCB0;
+    box-shadow: 0 0 4px 4px #3efb00;
   }
 }
-@keyframes rainbow-shadow {
-  0% {
-    box-shadow: 0 0 36px 8px #E93D28;
-  }
-  50% {
-    box-shadow: 0 0 97px 8px blue;
-  }
-  100% {
-    box-shadow: 0 0 140px #00FCB0;
-  }
-}
-
 /* base styling ........................................................................................*/
 body {
   background-color: #000000;
@@ -117,10 +104,7 @@ main {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 4px 4px #3efb00;
-  background: linear-gradient(90deg, #B9D2F9 0%, #00FCB0 100%);
-  background-size: 200%;
-  animation: gradient 6s infinite alternate;
-
+  background-color: #00FCB0;
 }
 .work .title-marquee {
   flex: 1;
@@ -154,8 +138,6 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: rainbow-shadow 6s infinite alternate;
-
   box-shadow: 0 0 24px 8px #E93D28;
 }
 /* gallery (base) ......................................................................................*/
@@ -202,6 +184,10 @@ main {
   border-bottom-right-radius: calc(50vw - 24px);
   background: linear-gradient(#B9D2F9 0%, #00FCB0 100%);
   box-shadow: 0px 0px 4px 4px #B9D2F9, 0px 0px 4px 4px #B9D2F9 inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .info button {
   display: block;
@@ -313,8 +299,6 @@ main {
   }
   /* info (tablet+) ....................................................................................*/
   .info button {
-    margin: 16px;
-    margin-left: auto;
     padding: 8px 24px;
     border-radius: 24px;
     font-size: 24px;
@@ -347,6 +331,9 @@ main {
 /* classes (desktop+) ..................................................................................*/
   .grid {
     grid-gap: 40px;
+  }
+  .rounded {
+    border-radius: 40px;
   }
 /* work (desktop+) .....................................................................................*/
   .work {
