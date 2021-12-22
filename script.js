@@ -60,6 +60,7 @@ function vhVariable() {
 }
 
 document.addEventListener('DOMContentLoaded', ()=> {
+  document.body.classList.add('loaded');
   initPayPalButton();
   paypalModal();
   vhVariable();
