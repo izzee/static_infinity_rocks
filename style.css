@@ -138,33 +138,55 @@ main {
   background-color: #ffffff;
   box-shadow: 0px 0px 4px 4px #B9D2F9, 0px 0px 16px 4px #B9D2F9 inset;
 }
+.work .carousel a {
+  -webkit-appearance: none;
+  border: 0;
+  background-color: transparent;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 15%;
+  height: 15%;
+  transform-origin: center center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(.8);
+  transition: transform .25s, opacity .25s;
+}
+.work .carousel .arrow-left {
+  left: 8px;
+  cursor: w-resize;
+  background-image: url('assets/arrow-left.png');
+}
+.work .carousel .arrow-right {
+  right: 8px;
+  cursor: e-resize;
+  background-image: url('assets/arrow-right.png');
+}
 .work .carousel img {
   position: absolute;
-  height: 60%;
-  width: 60%;
+  height: auto;
+  width: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 24px 16px #E93D28;
   opacity: 0;
+  transition: opacity 2s;
 }
 .work .carousel img.active {
   opacity: 1;
 }
-.work .arrow-left,
-.work .arrow-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.work .carousel .red-shadow {
+  box-shadow: 0 0 24px 16px #E93D28;
 }
-.work .arrow-left {
-  left: 8px;
-  cursor: w-resize;
+.work .carousel .pink-shadow {
+  box-shadow: 0 0 24px 16px #ff5e79;
 }
-
-.work .arrow-right {
-  right: 8px;
-  cursor: e-resize;
+.work .carousel .blue-shadow {
+  box-shadow: 0 0 24px 16px blue;
+}
+.work .carousel .purple-shadow {
+  box-shadow: 0 0 24px 16px #9162b3;
 }
 /* gallery (base) ......................................................................................*/
 .gallery {
@@ -237,10 +259,6 @@ main {
   animation: waving alternate-reverse infinite 4s;
   transition: filter .5s, opacity .5s;
   user-select: none;
-}
-.info .purchase-info:hover .infinity {
-  filter: blur(0);
-  opacity: 1;
 }
 .infinity:nth-child(2) {
   animation-delay: .1s;
@@ -364,6 +382,8 @@ body:not(.loaded) .paypal-modal {
   filter: blur(1vw);
   pointer-events: none;
 }
+.modal-open .arrow-left,
+.modal-open .arrow-right,
 .modal-open main img,
 .modal-open .info > *{
   display: none;
@@ -422,6 +442,13 @@ body:not(.loaded) .paypal-modal {
   .work .title-marquee .title-image {
     margin: 0 24px;
   }
+  .work .carousel a {
+    opacity: .9;
+  }
+  .work .carousel a:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-50%);
+  }
 /* info (desktop+) .....................................................................................*/
   .info {
     border-top-left-radius: calc(50vw - 40px);
@@ -443,6 +470,10 @@ body:not(.loaded) .paypal-modal {
     color: white;
     background-color: #E93D28;
     box-shadow: 0 4px 24px #5e718f, 0 4px 4px 4px black inset, 0 -2px 4px pink inset;
+  }
+  .info .purchase-info:hover .infinity {
+    filter: blur(0);
+    opacity: 1;
   }
 
 /* gallery (desktop+) ..................................................................................*/
