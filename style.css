@@ -58,10 +58,10 @@ button {
 }
 @keyframes waving {
   from {
-    transform: translateX(-100%) scale(2,.75);
+    transform: translateX(-50%) scale(2,.75);
   }
   to {
-    transform: translateX(100%) scale(2,.75);
+    transform: translateX(50%) scale(2,.75);
   }
 }
 /* base styling ........................................................................................*/
@@ -216,32 +216,25 @@ main {
   align-items: center;
 }
 .info h3 {
-  font-size:18px;
+  font-size:12px;
   font-weight: normal;
-  background-color: #FFD674;
+  background-color: yellow;
   padding: 2px;
   text-align: center;
   box-shadow: 0 4px 24px #5e718f, 0 4px 4px 4px #B9D2F9 inset, 0 -2px 4px pink inset;
-  transition: color .25s, background-color .25s, transform .25s, box-shadow .25s;
-}
-.info h3:hover {
-  transform: scale(2);
-  cursor:none;
-  color: white;
-  background-color: #E93D28;
-  box-shadow: 0 4px 24px #5e718f, 0 4px 4px 4px black inset, 0 -2px 4px pink inset;
+  transition: transform .25s;
 }
 .infinity {
   color:#3efb00;
-  font-size:24px;
+  font-size:16px;
   text-align: center;
   margin: auto;
   text-shadow: blue 3px 3px;
-  width: 60px;
   height: 16px;
   filter: blur(1px);
   opacity: .5;
-  animation: waving alternate-reverse infinite 6s ;
+  max-width: 100px;
+  animation: waving alternate-reverse infinite 4s;
   transition: filter .5s, opacity .5s;
   user-select: none;
 }
@@ -444,6 +437,13 @@ body:not(.loaded) .paypal-modal {
   .info h3 {
     font-size: 18px;
   }
+  .info h3:hover {
+    transform: scale(2);
+    cursor:none;
+    color: white;
+    background-color: #E93D28;
+    box-shadow: 0 4px 24px #5e718f, 0 4px 4px 4px black inset, 0 -2px 4px pink inset;
+  }
 
 /* gallery (desktop+) ..................................................................................*/
   .gallery .pannel.left {
@@ -457,7 +457,7 @@ body:not(.loaded) .paypal-modal {
   }
 }
 /* landscape styling ...................................................................................*/
-@media (orientation: landscape) and (min-width: 720){
+@media (orientation: landscape){
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 1fr;
