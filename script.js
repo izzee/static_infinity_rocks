@@ -59,10 +59,17 @@ function vhVariable() {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
+function imgCarousel () {
+  const carouselImgs = document.querySelectorAll('.work .carousel > img');
+  console.log(carouselImgs);
+}
+
 document.addEventListener('DOMContentLoaded', ()=> {
   document.body.classList.add('loaded');
   initPayPalButton();
   paypalModal();
   vhVariable();
+  imgCarousel();
+  
   window.addEventListener('resize', vhVariable)
 })
