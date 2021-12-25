@@ -171,7 +171,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 2s;
+  transition: opacity 3s;
 }
 .work .carousel img.active {
   opacity: 1;
@@ -186,7 +186,7 @@ main {
   box-shadow: 0 0 24px 16px blue;
 }
 .work .carousel .purple-shadow {
-  box-shadow: 0 0 24px 16px #9162b3;
+  box-shadow: 0 0 24px 16px #00FCB0;
 }
 /* gallery (base) ......................................................................................*/
 .gallery {
@@ -254,7 +254,7 @@ main {
   text-shadow: blue 3px 3px;
   height: 16px;
   filter: blur(1px);
-  opacity: .5;
+  opacity: .33;
   max-width: 100px;
   animation: waving alternate-reverse infinite 4s;
   transition: filter .5s, opacity .5s;
@@ -447,7 +447,10 @@ body:not(.loaded) .paypal-modal {
   }
   .work .carousel a:hover {
     opacity: 1;
-    transform: scale(1.1) translateY(-50%);
+    transform: scale(1, 1.2) translateY(-50%);
+  }
+  .work .carousel a:active {
+    filter: invert(1);
   }
 /* info (desktop+) .....................................................................................*/
   .info {
