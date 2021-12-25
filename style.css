@@ -296,6 +296,7 @@ main {
 }
 .info .social-link {
   flex-grow: 0;
+  max-width: 32px;
   padding: 0 2px;
   opacity: .8;
 
@@ -499,6 +500,9 @@ body:not(.loaded) .paypal-modal {
   .info .social-links {
     height: 64px;
     margin: auto;
+  }
+  .info .social-link {
+    max-width: 64px;
   }
 /* gallery (desktop+) ..................................................................................*/
   .gallery .pannel.left {
