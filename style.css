@@ -289,6 +289,25 @@ main {
   cursor: pointer;
   transition: opacity .25s, transform .25s, box-shadow .25s, color .25s;
 }
+.info .social-links {
+  height: 32px;
+  display: flex;
+  justify-content: center;
+}
+.info .social-link {
+  flex-grow: 0;
+  padding: 0 2px;
+  opacity: .8;
+
+}
+.info .social-link:hover {
+  opacity: 1;
+  filter: invert(1)
+}
+.info .social-link img {
+  width: 100%;
+  height: 100%;
+}
 .info button#email-open {
   margin-right: auto;
   margin-left: 8px;
@@ -458,8 +477,7 @@ body:not(.loaded) .paypal-modal {
     border-bottom-right-radius: calc(50vw - 40px);
   }
   .info button {
-    margin: 16px auto;
-    margin-left: auto;
+
     padding: 8px 40px;
     border-radius: 40px;
     font-size: 32px;
@@ -478,7 +496,10 @@ body:not(.loaded) .paypal-modal {
     filter: blur(0);
     opacity: 1;
   }
-
+  .info .social-links {
+    height: 64px;
+    margin: auto;
+  }
 /* gallery (desktop+) ..................................................................................*/
   .gallery .pannel.left {
     box-shadow: 0 0 4px 4px #E93D28, 0 0 4px 4px #E93D28 inset;
