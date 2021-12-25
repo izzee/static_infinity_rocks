@@ -171,7 +171,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 2s;
+  transition: opacity 3s;
 }
 .work .carousel img.active {
   opacity: 1;
@@ -186,7 +186,7 @@ main {
   box-shadow: 0 0 24px 16px blue;
 }
 .work .carousel .purple-shadow {
-  box-shadow: 0 0 24px 16px #9162b3;
+  box-shadow: 0 0 24px 16px #00FCB0;
 }
 /* gallery (base) ......................................................................................*/
 .gallery {
@@ -254,7 +254,7 @@ main {
   text-shadow: blue 3px 3px;
   height: 16px;
   filter: blur(1px);
-  opacity: .5;
+  opacity: .33;
   max-width: 100px;
   animation: waving alternate-reverse infinite 4s;
   transition: filter .5s, opacity .5s;
@@ -288,6 +288,26 @@ main {
   opacity: .8;
   cursor: pointer;
   transition: opacity .25s, transform .25s, box-shadow .25s, color .25s;
+}
+.info .social-links {
+  height: 32px;
+  display: flex;
+  justify-content: center;
+}
+.info .social-link {
+  flex-grow: 0;
+  max-width: 32px;
+  padding: 0 2px;
+  opacity: .8;
+
+}
+.info .social-link:hover {
+  opacity: 1;
+  filter: invert(1)
+}
+.info .social-link img {
+  width: 100%;
+  height: 100%;
 }
 .info button#email-open {
   margin-right: auto;
@@ -447,7 +467,10 @@ body:not(.loaded) .paypal-modal {
   }
   .work .carousel a:hover {
     opacity: 1;
-    transform: scale(1.1) translateY(-50%);
+    transform: scale(1, 1.2) translateY(-50%);
+  }
+  .work .carousel a:active {
+    filter: invert(1);
   }
 /* info (desktop+) .....................................................................................*/
   .info {
@@ -455,8 +478,7 @@ body:not(.loaded) .paypal-modal {
     border-bottom-right-radius: calc(50vw - 40px);
   }
   .info button {
-    margin: 16px auto;
-    margin-left: auto;
+
     padding: 8px 40px;
     border-radius: 40px;
     font-size: 32px;
@@ -475,7 +497,13 @@ body:not(.loaded) .paypal-modal {
     filter: blur(0);
     opacity: 1;
   }
-
+  .info .social-links {
+    height: 64px;
+    margin: auto;
+  }
+  .info .social-link {
+    max-width: 64px;
+  }
 /* gallery (desktop+) ..................................................................................*/
   .gallery .pannel.left {
     box-shadow: 0 0 4px 4px #E93D28, 0 0 4px 4px #E93D28 inset;
