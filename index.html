@@ -46,7 +46,7 @@
     </section>
 
     <section class="info rounded">
-      <button id="modal-open">Sold Out!</button>
+      <button id="modal-open">Sold Out</button>
     </section>
 
     <section class="gallery grid">
@@ -61,23 +61,24 @@
     </section>
   
   </main>
-  <div class="paypal-modal rounded">
+  <div class="modal rounded">
     
     <div class="top-bar">
-      <p>Infinity Rocks 2022&nbsp;Calendar</p>
+    <p>Stay in touch!</p>
+
       <button id="modal-close">
         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.18653 0.816223L0.816162 3.18659L14.4458 16.8162L0.816162 30.4459L3.18653 32.8162L16.8162 19.1866L30.4458 32.8162L32.8162 30.4459L19.1865 16.8162L32.8162 3.18659L30.4458 0.816223L16.8162 14.4459L3.18653 0.816223Z"/>
         </svg>          
       </button>
     </div>
-    <div id="smart-button-container">
-      <div style="text-align: center;">
-        <div id="paypal-button-container"></div>
-      </div>
+    <div class="form-wrapper">
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="email" name="email" placeholder="Enter your email">
+        <input type="submit" />
+      </form>
     </div>
-    <div class="infinity">♾☺️♾</div>
-    <script src="https://www.paypal.com/sdk/js?client-id=AYPRD1O_cp3P7rPV_NNeYyOmRDGYsietGT06AZQZ9uIs3S61wHbzWcAxvQ-JNZbLcBqhyHTHqQ52vHaI&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    
   </div>
   <script src="./script.js"></script>
 </body>
